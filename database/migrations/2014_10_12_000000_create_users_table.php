@@ -17,6 +17,15 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('username')->unique();
+            $table->text('bio')->nullable();
+            $table->string('website')->nullable();
+            $table->string('phone')->nullable();
+            $table->enum('sex', ['M', 'F', 'O'])->nullable();
+            $table->unsignedInteger('post_count')->default(0);
+            $table->unsignedInteger('follower_count')->default(0);
+            $table->unsignedInteger('following_count')->default(0);
+            $table->string('profile_picture')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
