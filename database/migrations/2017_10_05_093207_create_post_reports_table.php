@@ -20,6 +20,9 @@ class CreatePostReportsTable extends Migration
             $table->text('reason');
             $table->string('status')->index();
             $table->timestamps();
+
+            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

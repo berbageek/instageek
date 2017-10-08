@@ -19,6 +19,8 @@ class CreatePostTagTable extends Migration
             $table->timestamps();
 
             $table->primary(['post_id', 'user_id']);
+            $table->foreign('post_id')->references('id')->on('posts');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

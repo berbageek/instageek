@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
             $table->unsignedInteger('post_count')->default(0);
             $table->unsignedInteger('follower_count')->default(0);
             $table->unsignedInteger('following_count')->default(0);
-            $table->string('avatar')->nullable();
+            $table->string('profile_picture')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

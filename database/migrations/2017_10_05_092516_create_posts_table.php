@@ -22,6 +22,8 @@ class CreatePostsTable extends Migration
             $table->unsignedInteger('like_count')->default(0);
             $table->unsignedInteger('comment_count')->default(0);
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
