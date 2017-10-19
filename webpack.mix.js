@@ -1,4 +1,7 @@
 let mix = require('laravel-mix');
+require('dotenv').config();
+
+const PROXY_URL = process.env.APP_URL || 'localhost';
 
 /*
  |--------------------------------------------------------------------------
@@ -12,4 +15,6 @@ let mix = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css');
+    .sass('resources/assets/sass/app.scss', 'public/css');
+
+mix.browserSync(PROXY_URL);
